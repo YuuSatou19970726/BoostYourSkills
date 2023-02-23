@@ -8,8 +8,12 @@ namespace question_20
 		public void checkVaild(string s)
 		{
 			Console.WriteLine(s);
-            Print?.Invoke(s);
         }
+
+		public void check(string s)
+		{
+			Print?.Invoke(s);
+		}
 	}
 }
 

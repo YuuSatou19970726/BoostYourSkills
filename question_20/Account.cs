@@ -16,12 +16,11 @@ namespace question_20
 		{
 			this.name = name;
 			this.balance = balance;
-		}
+            validate.Print += validate.checkVaild;
+        }
 
 		public void Deposit()
 		{
-			//validate.Print += validate.checkVaild;
-
             while (true)
 			{
 				try
@@ -30,7 +29,7 @@ namespace question_20
                     int val = int.Parse(Console.ReadLine());
 					if(val < 100)
 					{
-						validate.checkVaild("Invalid amount for deposit. Please enter other value!");
+						validate.check("Invalid amount for deposit. Please enter other value!");
 					} else
 					{
 						balance += val;
@@ -39,15 +38,14 @@ namespace question_20
                 }
 				catch (Exception)
 				{
-                    validate.checkVaild("Invalid amount for deposit. Please enter other value!");
+                    validate.check("Invalid amount for deposit. Please enter other value!");
                 }
 			}
+            Console.WriteLine();
 		}
 
         public void Withdraw()
         {
-            //validate.Print += validate.checkVaild;
-
             while (true)
             {
                 try
@@ -56,7 +54,7 @@ namespace question_20
                     int val = int.Parse(Console.ReadLine());
                     if (val < 100 || val > balance)
                     {
-                        validate.checkVaild("Invalid amount for withdraw. Please enter other value!");
+                        validate.check("Invalid amount for withdraw. Please enter other value!");
                     }
                     else
                     {
@@ -66,9 +64,10 @@ namespace question_20
                 }
                 catch (Exception)
                 {
-                    validate.checkVaild("Invalid amount for withdraw. Please enter other value!");
+                    validate.check("Invalid amount for withdraw. Please enter other value!");
                 }
             }
+            Console.WriteLine();
         }
 
         public void Display()
